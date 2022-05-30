@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Cómo encriptar un mensaje</title>
+        <link rel="icon" type="image/x-icon" href="img/candado.png">
+		<link rel="stylesheet" type="text/css" href="styles/estilos.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
+	<body>
+		<header>
+			<nav>
+				<img src="img/candado.png" alt="Imagen candado">
+				<a href="index.html">¿Qué es la criptología?</a>
+				<a href="index.html">Campos de estudio</a>
+				<a href="encriptacion.html">¿Cómo se encripta un mensaje?</a>
+				<a href="cifrado.html">Tipos de cifrado</a>
+			</nav>
+		</header>
+		<main>
+			<section>
+				<h1>¿Cómo se encripta un mensaje?</h1>
+                <h3>Preprocesado del texto simple</h3>
+                <p>
+                    Antes de encriptar un mensaje hay que hacer un proceso de adaptación del texto plano. Este proceso tiene varios pasos que permiten que 
+                    el cifrado resultante sea más resistente frente a ataques por criptoanálisis. Todos los cambios que se hagan sobre el texto se tendrán 
+                    que tener en cuenta cuando se realice el descifrado para poder obtener el texto plano original. A continuación, se muestran diferentes 
+                    operaciones que se pueden usar para cifrar un mensaje:
+                </p>
+                    <ul>
+                        <li><b>Conversión del alfabeto.</b> Algunos cifradores usan un alfabeto del texto que no se corresponde con el del mensaje que se quiere cifrar, 
+                            por lo que es necesario adaptar el mensaje a ese alfabeto. Por ejemplo:<br>
+                            <article><br>
+                                "Algunos cifradores usan como alfabeto del texto plano el alfabeto latino. Si se desea cifrar un texto en español, es necesario realizar un proceso
+                                como resultado del cual no aparezcan los caracteres H, J, Ñ, K, U, W y Y (por ejemplo, podrían sustituirse la U y la W por la V, la K con la Q, 
+                                la Ñ por la N, la Y por la I, la J por la G, y eliminar la H). Otro ejemplo clásico es el caso de cifradores que no permiten cifrar minúsculas, 
+                                en cuyo caso será necesario convertir todo en mayúsculas."
+                            </article><br>
+                            <img src="img/encriptacion.jpg" alt="Imagen de un candado"><br>
+                            <a href="https://es.wikipedia.org/wiki/Cifrado_(criptograf%C3%ADa)#Preprocesado_del_texto_simple">Referencia del ejemplo</a>
+                        </li><br>
+                        <li><b>Preproceso para dificultar el criptoanálisis.</b> Se pueden incluir fragmentos que son para despistar y que no tienen ningún significado. Habitualmente
+                            estos fragmentos son caracteres, y se denominan caracteres nulos. También se pueden eliminar caracteres: los espacios en blanco y signos de puntuación
+                            suelen eliminarse para conseguir una trasmisión más eficiente y que no se puedan distinguir los límites de las palabras. También se eliminan letras idénticas
+                            como RR o LL.
+                        </li><br>
+                        <li>
+                            <b>Usar un código.</b> A veces, antes de cifrar, se utiliza un código que dificulta llegar al significado de ciertas palabras o frases especialmente importantes o habituales.
+                        </li><br>
+                        <li>
+                            <b>Conversión a números.</b> Hay algunos algoritmo de cifrado como el RSA que necesitan convertir los caracteres en números. Se usan sobre todo sistemas de codificación con 
+                            caracteres ASCII o Unicode. Por ejemplo:<br>
+                            <article>
+                                El mensaje "Hello World" usando Unicode-8 quedaría así:<br>
+                                48 65 6C 6C 6F 20 57 6F 72 6C 64<br>
+                                Esta cadena de bytes podríamos convertirla en un número concatenándolos:<br>
+                                0x48656C6C6F20576F726C64=87521618088882533792115812
+                            </article><br>
+                            <img src="img/security.jpg" alt="Imagen seguridad de datos"><br>
+                        </li><br>
+                        <li><b>Números con exponente.</b> Otra opción sería que los caracteres estuviesen ordenados según un criterio e interpretar la cadena como un número con base el número de caracteres del
+                            alfabeto. Por ejemplo, si ordenamos alfabéticamente la siguiente palabra con caracteres solamente en mayúsculas tendríamos:<br>
+                            <article>"HIJO" = 7*26^3 + 8*26^2 + 9*26 + 14 = 128688</article>
+                            Este último caso, sin embargo, puede producir un número demasiado pequeño, por lo que el texto cifrado no sería tan seguro.
+                        </li>
+                    </ul>
+            </section>
+		</main>
+		<footer>
+			<a href="https://es.wikipedia.org/wiki/Cifrado_(criptograf%C3%ADa)">Referencia 1 - Cifrado</a><br>
+			<a href="https://www.econectia.com/blog/que-es-encriptacion-de-datos">Referencia 2 - Encriptación</a><br>
+			<a href="https://www.ionos.es/digitalguide/servidores/seguridad/todo-sobre-los-metodos-de-encriptado/">Referencia 3 - Métodos de encriptación</a><br>
+            <p>Hecho por: Sara Vera Guerrero</p>
+		</footer>
+	</body>
+</html>
